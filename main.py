@@ -1,5 +1,6 @@
 import argparse
 import logging
+import sys
 import os
 import re
 import magic
@@ -28,14 +29,16 @@ def calculate_entropy(data):
     if not data:
         return 0
 
-    entropy = 0
+    # Count once with Counter. The earlier version rescanned the string
+    # once per distinct character, which turns a long token into quadratic
+    # work for no gain in accuracy.
+    from collections import Counter
+    counts = Counter(data)
     data_length = len(data)
-    probabilities = [float(data.count(c)) / data_length for c in dict.fromkeys(list(data))]
-
-    for prob in probabilities:
-        if prob > 0:
-            entropy -= prob * math.log(prob, 2)
-
+    entropy = 0
+    for count in counts.values():
+        prob = count / data_length
+        entropy -= prob * math.log(prob, 2)
     return entropy
 
 def scan_file(file_path, report_file, mask, delete, entropy_threshold):
@@ -146,7 +149,9 @@ def main():
     # Input validation: Check if path exists
     if not os.path.exists(path):
         logging.error(f"Error: Path '{path}' does not exist.")
-        return
+        # A missing scan target is a failed run. Returning here exited 0,
+        # so a scripted scan of a mistyped path looked like a clean scan.
+        sys.exit(1)
 
     try:
         # Clear the report file before starting a new scan
