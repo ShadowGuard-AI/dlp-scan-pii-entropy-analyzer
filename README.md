@@ -1,3 +1,5 @@
+![Banner](banner.png)
+
 # dlp-scan-PII-Entropy-Analyzer
 Analyzes text files for high entropy strings that might indicate leaked cryptographic keys or other sensitive data based on Shannon Entropy. - Focused on Scans local directories and files for sensitive data patterns (e.g., credit card numbers, API keys, PII) using regular expressions and file type identification. Generates reports detailing detected leaks and their severity, optionally allowing for data masking or deletion (with proper confirmation).
 
