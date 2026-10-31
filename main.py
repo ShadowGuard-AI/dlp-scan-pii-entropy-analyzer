@@ -17,7 +17,7 @@ def setup_argparse():
     parser = argparse.ArgumentParser(description='DLP Scanner for PII and High Entropy Strings.')
     parser.add_argument('path', help='Path to the directory or file to scan.')
     parser.add_argument('--report', help='Path to save the report.', default='dlp_report.txt')
-    parser.add_argument('--mask', action='store_true', help='Mask detected sensitive data in report.')
+    parser.add_argument('--mask', action='store_true', help='Mask detected sensitive data in report. Masking is always on; this flag is kept for compatibility and changes nothing.')
     parser.add_argument('--delete', action='store_true', help='Delete files containing sensitive data (USE WITH CAUTION!).')
     parser.add_argument('--entropy_threshold', type=float, default=4.5, help='Entropy threshold for considering a string as high entropy.') # Added entropy threshold
     return parser.parse_args()
@@ -92,15 +92,17 @@ def scan_file(file_path, report_file, mask, delete, entropy_threshold):
                     if match_list:
                         report.write(f"  {name} Patterns:\n")
                         for match in match_list:
-                            matched_text = match.group(0)
-                            if mask:
-                                matched_text = "*" * len(matched_text)
+                            # Detected values are never written in clear. The
+                            # report keeps the type, position and length, and
+                            # the value itself is always asterisks, whether
+                            # or not --mask was passed.
+                            matched_text = "*" * len(match.group(0))
                             report.write(f"    - Found: {matched_text} at position {match.start()}\n")
 
                 if high_entropy_strings:
                     report.write(f"  High Entropy Strings (Entropy >= {entropy_threshold}):\n")
                     for string, entropy in high_entropy_strings:
-                        masked_string = string if not mask else '*' * len(string) #Mask high entropy
+                        masked_string = '*' * len(string)
                         report.write(f"    - String: {masked_string}, Entropy: {entropy:.2f}\n")
 
                 if delete:
@@ -163,12 +165,17 @@ def main():
         elif os.path.isdir(path):
             scan_directory(path, report_file, mask, delete, entropy_threshold)
         else:
+            # No scan was dispatched, so this is not a completed scan.
             logging.error(f"Error: '{path}' is neither a file nor a directory.")
+            sys.exit(1)
 
         logging.info(f"Scan complete. Report saved to {report_file}")
 
+    except SystemExit:
+        raise
     except Exception as e:
         logging.error(f"An unexpected error occurred: {e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
