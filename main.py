@@ -73,10 +73,19 @@ def scan_file(file_path, report_file, mask, delete, entropy_threshold):
         }
 
         matches = {}
+        # The patterns are run independently over the same text, so one
+        # stretch of characters can be reported under several types at
+        # once: a 36 character token is an API Key match, and the digit
+        # runs inside it can also match the Credit Card shape. The
+        # counts in the report are per pattern, not per distinct secret.
         for name, pattern in patterns.items():
             matches[name] = list(re.finditer(pattern, content))
 
         high_entropy_strings = []
+        # Candidates are word character runs only, so a secret split by
+        # punctuation or spaces is never measured as one string, and
+        # the same string appearing five times is measured and listed
+        # five times, once per occurrence.
         words = re.findall(r'\b\w{12,}\b', content) # Consider words of length 12 or more as candidates
         for word in words:
             entropy = calculate_entropy(word)
@@ -106,6 +115,13 @@ def scan_file(file_path, report_file, mask, delete, entropy_threshold):
                         report.write(f"    - String: {masked_string}, Entropy: {entropy:.2f}\n")
 
                 if delete:
+                    # Deletion asks on stdin once per matching file,
+                    # while the report file is open. In a run with no
+                    # terminal attached, input() raises EOFError, which
+                    # the outer handler logs as a processing error for
+                    # this file, and the scan moves on with the file
+                    # kept. So --delete only deletes in an interactive
+                    # run, whatever the caller intended.
                     user_confirmation = input(f"Are you sure you want to DELETE {file_path}? (y/n): ")
                     if user_confirmation.lower() == 'y':
                         try:
