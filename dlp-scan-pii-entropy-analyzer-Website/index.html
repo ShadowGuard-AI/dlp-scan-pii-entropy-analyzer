@@ -1,164 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dlp Scan Pii Entropy Analyzer: what it is, how it runs, where it stops</title>
-<meta name="description" content="Dlp Scan Pii Entropy Analyzer is one of my projects. The README in the repo is short, so this page sticks to what the files themselves show.">
-<style>
-:root {
-  --bg: #d6e0e6; --panel: #e8f0f4; --ink: #122230;
-  --mut: #ffffff;
-  --acc: #c4542c; --acc2: #266e82;
-  --line: #e8f0f4;
-}
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink);
-  font-family: Georgia, 'Times New Roman', serif; line-height: 1.55; }
-code, pre, .mono { font-family: 'Courier New', monospace; }
-a { color: var(--acc2); }
-.hero { padding: 3rem 6vw 1rem; }
-.hero img.banner { width: 100%; height: auto; border: 1px solid var(--line);
-  border-radius: 10px; }
-.logo { width: 92px; height: 92px; border-radius: 18px;
-  border: 1px solid var(--line); }
-h1 { font-size: 2.4rem; margin: 0.4em 0 0.1em; }
-h2 { border-bottom: 2px solid var(--acc); padding-bottom: 0.2em;
-  margin-top: 2em; }
-.lede { font-size: 1.15rem; max-width: 62ch; }
-main { padding: 0 6vw 3rem; max-width: 1180px; margin: 0 auto; }
-.grid { display: grid; gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
-.card { background: var(--panel); border: 1px solid var(--line);
-  border-radius: 12px; padding: 1rem 1.2rem; }
-.card.pop { animation: rise 0.7s ease both; }
-@keyframes rise { from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: none; } }
-pre.code { background: #101014; color: #e8e6df; padding: 1rem 1.2rem;
-  border-radius: 12px; overflow-x: auto; font-size: 0.86rem;
-  border-left: 5px solid var(--acc); }
-table { border-collapse: collapse; width: 100%; }
-td, th { border-bottom: 1px solid var(--line); padding: 0.45rem 0.6rem;
-  text-align: left; }
-.shots { display: grid; gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.shots img { width: 100%; height: auto; border: 1px solid var(--line);
-  border-radius: 10px; background: #f4f1e8; }
-footer { padding: 2rem 6vw; border-top: 1px solid var(--line);
-  color: var(--mut); }
-.rail { display: flex; gap: 1.2rem; align-items: flex-start; }
-.rail nav { position: sticky; top: 1rem; min-width: 180px; }
-@media (max-width: 760px) { .rail { flex-direction: column; }
-  .rail nav { position: static; } }
-@media (prefers-reduced-motion: reduce) {
-  .card.pop { animation: none; } * { scroll-behavior: auto; } }
-</style>
-</head>
-<body class="layout-ledger">
-<!-- This page exists for dlp-scan-pii-entropy-analyzer alone: the layout (ledger),
-     the colors, and the type were picked for this project, not
-     shared with the other project pages. The code block below is
-     copied from the file it names, line for line. If it looks
-     plain, that is because the project is plain, and I would
-     rather the page match the project than dress it up. The one
-     thing I will not do here is oversell: what this project does
-     not do is stated on the page, not hidden from it. -->
-<header class="hero">
-  <img class="logo" src="assets/logo.png" alt="Dlp Scan Pii Entropy Analyzer logo">
-  <img class="banner" src="assets/banner.png" alt="">
-  <h1>Dlp Scan Pii Entropy Analyzer</h1>
-  <p class="mono"><a href="https://github.com/ShadowGuard-AI/dlp-scan-pii-entropy-analyzer">github.com/ShadowGuard-AI/dlp-scan-pii-entropy-analyzer</a></p>
-</header>
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>dlp-scan-pii-entropy-analyzer: The Lighthouse Keeper's Card School</title>
+<style>@font-face{font-family:Disp;src:url("fonts/Brawler.ttf")}@font-face{font-family:Text;src:url("fonts/AlegreyaSans.ttf")}
+body{background:#1E1434;font-family:Text,sans-serif;color:#EFE8D2;margin:0}main{max-width:920px;margin:0 auto;padding:28px}
+h1,h2,h3{font-family:Disp,serif;color:#F5EED6}section{background:#1F5A58;padding:18px 22px;margin:16px 0;border-top:3px solid #C0C6CC}
+img{max-width:100%}button{background:#F5EED6;color:#3B2A5D;border:2px solid #C0C6CC;padding:14px 18px;margin:4px;font-family:Disp,serif}
+a{color:#F5EED6}pre{white-space:pre-wrap;font-family:Text,sans-serif;background:#160F28;padding:16px}</style></head><body><main>
+<img src="intro-banner.png" alt="Introduction banner: the room before the keeper arrives">
+<h1>dlp-scan-pii-entropy-analyzer: The Lighthouse Keeper's Card School</h1>
+<p>This site names itself dlp-scan-pii-entropy-analyzer: The Lighthouse Keeper's Card School at every self reference. The page is arranged as a night watch log, one entry per watch, ruled as it goes.</p>
+<img src="logo.png" alt="Logo"><img src="banner.png" alt="Wordmark banner">
+<img src="scene.svg" alt="Animated scene in three bands">
+<div><button type="button">Turn the First Card</button><button type="button">Read the Night Report</button><button type="button">Show the Watch Log</button></div>
+<h3>Four Shapes Sought</h3><h3>Randomness Weighed by the String</h3><h3>Skipped Files Are Named in the Log</h3><h3>Masked at Every Length</h3><h3>One Exit for a Finished Watch</h3>
+<section><h2>First entry: the work</h2><p>The program scans one file, or every file under one directory, hunting two kinds of trouble. It matches four written pattern shapes for personal and credential material. It also measures word length strings for randomness. Anything it finds goes into a report file, always masked, never in clear.</p></section>
+<section><h2>Second entry: Four Shapes Sought</h2><p>The four pattern shapes are named in words here, never as copied values, and this site prints no detected value of any kind. A card number shape: thirteen to sixteen digits, spaces or hyphens allowed between them. An application key shape: a run of thirty two to forty five word characters or hyphens, word characters being letters, digits, and the low line character. A social security shape: digits grouped three, two, and four, hyphen split. An electronic mail shape: a local part, an at sign, a domain, a suffix of at least two letters. One stretch of text may be counted under several shapes at once. The report counts per pattern, not per distinct secret.</p></section>
+<section><h2>Third entry: Randomness Weighed by the String</h2><p>Candidates are runs of word characters at least twelve long, split at punctuation and spaces, so a secret broken by punctuation is never measured whole. Each candidate gets a Shannon entropy score. A candidate at or above the threshold is listed, masked to asterisks of its own length, with its score printed to two decimal places. The same string found five times is listed five times.</p></section>
+<section><h2>Fourth entry: the needs</h2><p>Python 3. Two packages, named in the requirements file: chardet at 5.2.0 or later, and python-magic at 0.4.27 or later. Both are imported at the top of main.py, alongside the magic binding, so a machine missing either package stops at import, before help can print. One quiet condition the README leaves out: python-magic leans on the system libmagic library, which no requirements line installs.</p></section>
+<section><h2>Fifth entry: install, corrected</h2><p>On this site only, the clone line is corrected in the open, as a repair. The README line as printed is wrong in its organisation. The corrected line names the true organisation, ShadowGuard-AI, hyphenated, and ends with the repository suffix: git clone https://github.com/ShadowGuard-AI/dlp-scan-pii-entropy-analyzer.git</p></section>
+<section><h2>Sixth entry: the working form</h2><p>The working form is python3 main.py, then the scan path, then any options. The path is positional and required, though the README parameter list forgets it; this site restores it at the head of the controls. Then, in parser order: report, whose path defaults to dlp_report.txt; mask, a compatibility flag that changes nothing because masking is always on; delete, which asks before removing any file; and entropy_threshold, a number defaulting to 4.5. Help closes the list.</p></section>
+<section><h2>Seventh entry: a scan, walked</h2><p>File type is read first through the magic binding. A file whose type carries no text is skipped and the skip is logged. Encoding is guessed from the raw bytes. No guess means a skip. A decode failure means a skip. Directories are walked in full, root by root, every file offered to the same treatment. Skipped Files Are Named in the Log.</p></section>
+<section><h2>Eighth entry: the report, honestly</h2><p>The report opens with a report heading, then one block per file that produced findings: the file path, each pattern type with a position and an asterisk string of the matched length, then any high entropy strings with their scores. No severity grade exists anywhere in it. The README introduction promises severity; the code writes none, and this site does not pretend otherwise. Masked at Every Length.</p></section>
+<section><h2>Ninth entry: deletion, with care</h2><p>With delete set, the program asks once per matching file, at the keyboard, while the report is still open. An answer of the single letter y, either case, removes the file and the report records the removal. Any other answer keeps the file and the report records the refusal, again with no value written. With no terminal attached, the question itself fails, the file is kept, and the failure is logged as a processing error for that file.</p></section>
+<section><h2>Last entry: endings and licence</h2><p>One Exit for a Finished Watch. Exit 0 belongs only to a scan that dispatched and completed. A missing path exits 1. A path that is neither file nor directory exits 1. A failure while opening the report exits 1. But an error inside one file of a directory scan is caught, logged, and the walk goes on, so the exit line stays 0 even then; the README exit note claims more than that, and this entry states the narrower truth. Licence follows: the README licence line is printed as it stands in the preserved record below, Copyright (c) ShadowStrikeHQ, and beside it a separate fact is recorded. The LICENSE file in the repository carries the MIT License. Its holder line gives a pen name first, a parenthetical given name with a single initial after it, and a handle last. The initial is not expanded here.</p></section>
+<section><h2>The preserved README record</h2><pre>![Banner](banner.png)
 
-<main>
-  <section class="rail">
-    <nav aria-label="on this page">
-      <p class="mono"><a href="#run">Run it</a><br>
-      <a href="#files">The files</a><br>
-      <a href="#sheets">The sheets</a><br>
-      <a href="https://github.com/ShadowGuard-AI/dlp-scan-pii-entropy-analyzer">The repo</a></p>
-    </nav>
-    <div>
-      <p class="lede">Dlp Scan Pii Entropy Analyzer is one of my projects. The README in the repo is short, so this page sticks to what the files themselves show.</p>
-      <div class="grid">
-        <div class="card pop"><h3>What it is</h3>
-          <p>Dlp Scan Pii Entropy Analyzer: 3 files, 190 counted
-          lines across Python 170, Markdown 18, Text 2. One job, done in the
-          open, in files you can read.</p></div>
-        <div class="card pop"><h3>The biggest piece</h3>
-          <p><code>main.py</code> carries the most
-          lines. If the project grows, that file is where the growth
-          lands first, for better or worse.</p></div>
-        <div class="card pop"><h3>The honest gap</h3>
-          <p>No test files yet. That is the honest gap, and the roadmap in the visuals folder says what the first one should cover.</p></div>
-      </div>
-      <section id="run">
-        <h2>Run it</h2>
-        <p>The repo README has the exact commands for this one. The
-        shape is the shape for most of my projects: clone it, read the
-        top file first so you know what will happen, then run it on
-        something you do not mind breaking.</p>
-        <p class="mono">$ git clone https://github.com/ShadowGuard-AI/dlp-scan-pii-entropy-analyzer.git<br>$ cd dlp-scan-pii-entropy-analyzer</p>
-      </section>
-      
-  <section aria-label="real code">
-    <h2>The code, as it sits in the repo</h2>
-    <p>From <code>main.py</code>, line 10 on. I did
-    not tidy it for the page. What you see is what the file has.</p>
-    <pre class="code"><code>logging.basicConfig(level=logging.INFO, format=&#x27;%(asctime)s - %(levelname)s - %(message)s&#x27;)
+# dlp-scan-PII-Entropy-Analyzer
+Analyzes text files for high entropy strings that might indicate leaked cryptographic keys or other sensitive data based on Shannon Entropy. - Focused on Scans local directories and files for sensitive data patterns (e.g., credit card numbers, API keys, PII) using regular expressions and file type identification. Generates reports detailing detected leaks and their severity, with detected values always masked in the report, or deletion (with proper confirmation).
 
-def setup_argparse():
-    &quot;&quot;&quot;
-    Sets up the argument parser for the command-line interface.
-    &quot;&quot;&quot;
-    parser = argparse.ArgumentParser(description=&#x27;DLP Scanner for PII and High Entropy Strings.&#x27;)
-    parser.add_argument(&#x27;path&#x27;, help=&#x27;Path to the directory or file to scan.&#x27;)
-    parser.add_argument(&#x27;--report&#x27;, help=&#x27;Path to save the report.&#x27;, default=&#x27;dlp_report.txt&#x27;)
-    parser.add_argument(&#x27;--mask&#x27;, action=&#x27;store_true&#x27;, help=&#x27;Mask detected sensitive data in report.&#x27;)
-    parser.add_argument(&#x27;--delete&#x27;, action=&#x27;store_true&#x27;, help=&#x27;Delete files containing sensitive data (USE WITH CAUTION!).&#x27;)
-    parser.add_argument(&#x27;--entropy_threshold&#x27;, type=float, default=4.5, help=&#x27;Entropy threshold for considering a string as high entropy.&#x27;) # Added entropy threshold
-    return parser.parse_args()
+## Install
+`git clone https://github.com/ShadowStrikeHQ/dlp-scan-pii-entropy-analyzer`
 
-def calculate_entropy(data):
-    &quot;&quot;&quot;
-    Calculates the Shannon entropy of a string.
-    &quot;&quot;&quot;
-    if not data:
-        return 0
+## Usage
+`./dlp-scan-pii-entropy-analyzer [params]`
 
-    entropy = 0</code></pre>
-  </section>
-      <section id="files">
-        <h2>The files that matter</h2>
-        <table><tr><th>File</th><th>Lines</th></tr>
-        <tr><td><code>main.py</code></td><td>170</td></tr>
-        <tr><td><code>README.md</code></td><td>18</td></tr>
-        <tr><td><code>requirements.txt</code></td><td>2</td></tr>
-        </table>
-        <p>Names doing the work: <span class="mono">setup_argparse, calculate_entropy, scan_file, scan_directory, main</span>.</p>
-      </section>
-      <section id="sheets">
-        <h2>Drawn by hand</h2>
-        <p>I sketch my projects on notebook paper so I have to
-        understand them well enough to draw them. The full set,
-        with the counts and how they were counted, is the
-        <a href="https://github.com/ShadowGuard-AI/dlp-scan-pii-entropy-analyzer/tree/main/dlp-scan-pii-entropy-analyzer-Visuals">dlp-scan-pii-entropy-analyzer-Visuals</a>
-        folder in the repo. Nothing is drawn over the binder holes.
-        That is a rule, not a style.</p>
-        <div class="shots">
-          <img src="assets/architecture.png" alt="Hand drawn architecture sheet for Dlp Scan Pii Entropy Analyzer">
-          <img src="assets/flowchart.png" alt="Hand drawn flowchart sheet for Dlp Scan Pii Entropy Analyzer">
-          <img src="assets/product-map.png" alt="Hand drawn product map sheet for Dlp Scan Pii Entropy Analyzer">
-        </div>
-      </section>
-    </div>
-  </section>
-</main>
-<footer>
-  <p>Dlp Scan Pii Entropy Analyzer is one of my projects. This page was written
-  from the repo itself on 2026-10-30: the counts are the
-  repo's counts, the code is the repo's code, and the gaps are the
-  repo's gaps.</p>
-</footer>
-</body>
-</html>
+## Parameters
+- `-h`: Show help message and exit
+- `--report`: Path to save the report.
+- `--mask`: Mask detected sensitive data in report. Masking is now always on, with or without this flag: detected values are never written to the report in clear. The report keeps the file, the pattern type, the position, and the masked length (asterisks). This flag is kept so old commands still run; it changes nothing.
+- `--delete`: No description provided
+- `--entropy_threshold`: Entropy threshold for considering a string as high entropy.
+
+## Exit status
+
+Exit 0 and the "Scan complete" line are reserved for runs that actually dispatched and completed a scan. A scan path that is neither a file nor a directory, and any unexpected error during a run (for example a report path in a directory that does not exist), exit 1. A missing scan path also exits 1. The --delete option still prompts per file and deletes only on an exact y answer; a declined answer deletes nothing and is recorded in the report without any detected value.
+
+## License
+Copyright (c) ShadowStrikeHQ</pre></section>
+</main></body></html>

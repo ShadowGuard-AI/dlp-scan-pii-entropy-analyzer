@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img" aria-label="The card school room in three bands: moon phases advancing in order in the window glass with cloud drifting across, night bells swaying a hair on the sill while stars are stitched dot by dot onto the folded blanket, and a keeper hand turning a card onto a column while the ledger opens and one page turns">
+<rect width="900" height="300" fill="#1E1434"/>
+<!-- far band: window, moon phases advance in proper order, cloud drifts -->
+<rect x="600" y="14" width="270" height="86" fill="#08080F" stroke="#C0C6CC" stroke-width="2"/>
+<g>
+<path d="M790 30a26 26 0 1 0 0 52a20 20 0 1 1 0-52z" fill="#F5EED6"><animate attributeName="opacity" values="1;1;0;0;1" dur="18s" repeatCount="indefinite"/></path>
+<ellipse cx="790" cy="56" rx="14" ry="26" fill="#F5EED6"><animate attributeName="opacity" values="0;0;1;0;0" dur="18s" repeatCount="indefinite"/></ellipse>
+<circle cx="790" cy="56" r="26" fill="#F5EED6"><animate attributeName="opacity" values="0;0;0;1;0" dur="18s" repeatCount="indefinite"/></circle>
+</g>
+<ellipse cx="700" cy="44" rx="90" ry="14" fill="#2E3A4E"><animateTransform attributeName="transform" type="translate" values="-60 0; 150 0; -60 0" dur="22s" repeatCount="indefinite"/></ellipse>
+<rect x="30" y="20" width="110" height="80" fill="#160F28" stroke="#1F5A58" stroke-width="2"/>
+<circle cx="66" cy="34" r="3" fill="#C0C6CC"/><line x1="66" y1="37" x2="60" y2="52" stroke="#C0C6CC"/><line x1="66" y1="37" x2="72" y2="52" stroke="#C0C6CC"/><ellipse cx="66" cy="58" rx="12" ry="7" fill="none" stroke="#C0C6CC" stroke-width="2"/>
+<!-- middle band: bells sway after a touch, blanket stars stitched one dot at a time -->
+<g><animateTransform attributeName="transform" type="rotate" values="0 640 108; 2 640 108; 0 640 108; -2 640 108; 0 640 108" dur="9s" repeatCount="indefinite"/><path d="M632 122h16l-4-14h-8z" fill="#C0C6CC"/><circle cx="640" cy="126" r="3" fill="#C0C6CC"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 676 108; -2 676 108; 0 676 108; 2 676 108; 0 676 108" dur="11s" repeatCount="indefinite"/><path d="M668 122h16l-4-14h-8z" fill="#C0C6CC"/><circle cx="676" cy="126" r="3" fill="#C0C6CC"/></g>
+<rect x="180" y="118" width="240" height="62" fill="#3B2A5D"/>
+<g fill="#C0C6CC">
+<circle cx="210" cy="138" r="3"><animate attributeName="opacity" values="0;1;1" dur="12s" begin="0s" repeatCount="indefinite"/></circle>
+<circle cx="260" cy="156" r="3"><animate attributeName="opacity" values="0;0;1;1" dur="12s" begin="0s" repeatCount="indefinite"/></circle>
+<circle cx="315" cy="136" r="3"><animate attributeName="opacity" values="0;0;0;1;1" dur="12s" begin="0s" repeatCount="indefinite"/></circle>
+<circle cx="372" cy="158" r="3"><animate attributeName="opacity" values="0;0;0;0;1" dur="12s" begin="0s" repeatCount="indefinite"/></circle>
+</g>
+<!-- near band: table, columns, a hand turns a card, the ledger opens and a page turns once -->
+<rect x="0" y="196" width="900" height="104" fill="#2E2040"/>
+<g fill="#3B2A5D" stroke="#C0C6CC"><rect x="90" y="206" width="52" height="72" rx="4"/><rect x="160" y="206" width="52" height="72" rx="4"/></g>
+<rect x="90" y="240" width="52" height="38" rx="4" fill="#F5EED6"/>
+<g>
+<animateTransform attributeName="transform" type="translate" values="0 0; 70 10; 70 10; 0 0" dur="14s" repeatCount="indefinite"/>
+<rect x="330" y="200" width="52" height="72" rx="4" fill="#F5EED6" stroke="#C0C6CC"/>
+<ellipse cx="420" cy="196" rx="30" ry="12" fill="#DEB896"/>
+<rect x="398" y="168" width="9" height="26" rx="4" fill="#DEB896"/><rect x="412" y="164" width="9" height="30" rx="4" fill="#DEB896"/><rect x="426" y="166" width="9" height="28" rx="4" fill="#DEB896"/>
+</g>
+<g>
+<rect x="600" y="216" width="170" height="58" rx="4" fill="#1F5A58" stroke="#C0C6CC"/>
+<path d="M685 216 L760 222 L760 268 L685 262 Z" fill="#F5EED6"><animate attributeName="opacity" values="0;0;1;1;0" dur="16s" repeatCount="indefinite"/></path>
+<line x1="685" y1="216" x2="685" y2="274" stroke="#C0C6CC"/>
+</g>
+</svg>
